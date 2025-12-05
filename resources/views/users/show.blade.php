@@ -1,0 +1,1 @@
+<h1>Usuário buscado é {{$user->name}}</h1>

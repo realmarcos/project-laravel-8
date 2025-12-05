@@ -1,6 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +26,8 @@ Route::get('/exemplo', function () {
     return view('exemplo');
 });
 
+Route::get("/usuarios", [UserController::class, 'index']);
+
+Route::get("/usuarios/{id}",  [UserController::class, 'show']);
+
+Route::resource('products', ProductController::class); // Rotas completas para o recurso ProductController
